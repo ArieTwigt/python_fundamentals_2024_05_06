@@ -1,5 +1,5 @@
 import requests
-import pandas
+import pandas as pd
 
 
 # specify license plate
@@ -15,7 +15,7 @@ response = requests.get(endpoint)
 data = response.json()
 
 # convert to datat frame
-data_df = pandas.DataFrame(data)
+data_df = pd.DataFrame(data)
 
 #
 data_df.to_csv(f"data_{selected_brand}.csv", index=False)
